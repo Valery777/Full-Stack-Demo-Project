@@ -7,37 +7,56 @@ System Overview
 The repository contains two coordinated projects: • NextClientApp — Next.js 15 + React 19 frontend • NextJS1 — .NET 8 Web API backend with MySQL, ML.NET, and Ollama integration
 
 Key Capabilities Full‑Stack Features 
+
 • Product CRUD UI and API backed by MySQL. 
+
 • ML.NET prediction tools (regression, binary, multiclass). 
+
 • LLM chat and text‑analysis powered by Ollama. 
+
 • JWT authentication with protected endpoints. 
+
 • Clean Architecture backend with SOLID principles. 
+
 • React 19 Server Actions, SSR/SSG/ISR examples, and interactive demos. 
+
 Infrastructure & Deployment 
+
 • Multi‑container architecture (frontend, backend, MySQL, Ollama). 
+
 • Environment‑specific configuration via , , . 
+
 • Persistent MySQL volumes for all environments. 
+
 • Automatic EF Core migrations on backend startup.
+
 • Dev‑only database seeding for sample data.
 
 Architecture Diagram
 
+
 ┌──────────────────────────┐
-┌──────────────────────────┐
+
 │ Next.js Frontend │ 
+
 │ .NET 8 Web API │ 
+
 │(NextClientApp, port 3000)
-|◄──────►
-| (NextJS1, port 5000) │ │ │ │ │
-└──────────────▲───────────┘ └──────────────┬───────────┘ │ │ │ │ │ 
-▼ User Browser ┌──────────────────┐ 
+
+| (NextJS1, port 5000)  
+└──────────────▲───────────┘ 
+
+▼ User Browser
+
 │ MySQL DB │ 
+
 │ (Persistent Vol) 
-│ └──────────────────┘ 
-│ ▼ ┌──────────────────┐ 
+
 │ Ollama LLM │ 
+
 │ (phi3:mini, etc.)
-│ └──────────────────┘
+
+ └──────────────────┘
 
 Each project contains its own documentation, while this root README explains the full architecture.
 
@@ -108,10 +127,18 @@ Project Goals
 This repository demonstrates:
 
 A realistic full‑stack architecture.
+
 Integration of ML.NET and LLMs into a modern web application.
+
 Clean, maintainable backend design.
+
 Modern React 19 and Next.js 15 patterns.
-How to Run the Full‑Stack Project Manually (Without Docker) This guide explains how to run the backend (.NET 8 Web API) and frontend (Next.js 15 + React 19) manually on your machine without using containerization.
+
+How to Run the Full‑Stack Project Manually (Without Docker)
+
+This guide explains how to run the backend (.NET 8 Web API) and frontend (Next.js 15 + React 19) 
+
+manually on your machine without using containerization.
 
 Prerequisites Make sure you have the following installed: 
 Backend Requirements 
