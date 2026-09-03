@@ -40,9 +40,6 @@ Infrastructure & Deployment
 
 Architecture Diagram
 
-
-
-
 │ Next.js Frontend │ 
 
 │ .NET 8 Web API │ 
@@ -100,9 +97,14 @@ Infrastructure
 
 • Persistent MySQL volumes
 
-OpenAI Integration (Optional) The backend includes an optional integration with OpenAI’s chat models,
+OpenAI Integration (Optional) 
+
+The backend includes an optional integration with OpenAI’s chat models,
+
 allowing the API to generate cloud‑based conversational responses. When an API key is provided,
+
 a lightweight /api/chat endpoint can forward user messages to an OpenAI model and return the assistant’s reply.
+
 This feature serves as a simple extension point for adding intelligent chat capabilities alongside the existing local LLM (Ollama) support.
 
 Running the Full Stack Running the project becomes manual: 
@@ -188,6 +190,7 @@ The frontend will start at:http://localhost:3000 Configure API URL:
 Create a .env.local file in : NextClientApp/ NEXT_PUBLIC_API_URL=http://localhost:5000
 
 🧪 Test the Full‑Stack Flow Products CRUD 
+
 • Open 
 
 • Create, edit, delete products 
@@ -200,13 +203,14 @@ Create a .env.local file in : NextClientApp/ NEXT_PUBLIC_API_URL=http://localhos
 
 • Multiclass classification LLM (Ollama) 
 
-• Chat 
+• ChatBot 
 
 • Text analysis 
 
 • Q&A Everything should work end‑to‑end.
 
 . 🧹 Troubleshooting Backend cannot connect to MySQL 
+
 • Ensure MySQL is running 
 
 • Check username/password 
