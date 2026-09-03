@@ -1,10 +1,16 @@
 Full‑Stack Demo: Next.js 15 + React 19 + .NET 8 + MySQL + ML.NET + Ollama + OpenAI
 
-A complete full‑stack demonstration combining a modern Next.js 15 frontend with a .NET 8 Web API backend. The system integrates MySQL, ML.NET machine‑learning models, and a local LLM (Ollama) to showcase real‑world architecture patterns, predictive analytics, natural‑language processing, and clean separation of concerns.
+A complete full‑stack demonstration combining a modern Next.js 15 frontend with a .NET 8 Web API backend. 
+The system integrates MySQL, ML.NET machine‑learning models, and a local LLM (Ollama) to showcase real‑world
+architecture patterns, predictive analytics, natural‑language processing, and clean separation of concerns.
 
 System Overview
 
-The repository contains two coordinated projects: • NextClientApp — Next.js 15 + React 19 frontend • NextJS1 — .NET 8 Web API backend with MySQL, ML.NET, and Ollama integration
+The repository contains two coordinated projects: 
+
+• NextClientApp — Next.js 15 + React 19 frontend 
+
+• NextJS1 — .NET 8 Web API backend with MySQL, ML.NET, and Ollama integration
 
 Key Capabilities Full‑Stack Features 
 
