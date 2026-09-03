@@ -44,21 +44,34 @@ Each project contains its own documentation, while this root README explains the
 Technology Stack
 Frontend 
 • Next.js 15 (App Router) 
+
 • React 19 
+
 • TypeScript 
+
 • TailwindCSS 
+
 • Server Actions, SSR, SSG, ISR Backend 
+
 • .NET 8 Web API 
+
 • Clean Architecture (Domain, Application, Infrastructure, API) 
+
 • EF Core + MySQL 
+
 • ML.NET models (regression, binary, multiclass) 
+
 • Ollama LLM integration 
+
 • Serilog logging 
+
 • JWT authentication 
+
 • xUnit tests
 
 Infrastructure 
 • Environment‑specific files 
+
 • Persistent MySQL volumes
 
 OpenAI Integration (Optional) The backend includes an optional integration with OpenAI’s chat models,
@@ -67,21 +80,32 @@ a lightweight /api/chat endpoint can forward user messages to an OpenAI model an
 This feature serves as a simple extension point for adding intelligent chat capabilities alongside the existing local LLM (Ollama) support.
 
 Running the Full Stack Running the project becomes manual: 
+
 • .NET 8 must be installed locally. 
+
 • Node.js must be installed for the frontend. 
+
 • MySQL must be installed and configured manually. 
+
 • Ollama must be installed separately if LLM features are used. Access the applications 
+
 • Frontend: http://localhost:3000 
+
 • Backend API + Swagger: http://localhost:5000/swagger 
+
 • Ollama (local LLM): http://localhost:11434 (if enabled)
 
 Environment Strategy Each environment uses its own:
 • MySQL database name 
+
 • MySQL volume 
+
 • Credentials 
+
 • Backend/Frontend URLs
 
-Project Goals This repository demonstrates:
+Project Goals 
+This repository demonstrates:
 
 A realistic full‑stack architecture.
 Integration of ML.NET and LLMs into a modern web application.
@@ -92,10 +116,15 @@ How to Run the Full‑Stack Project Manually (Without Docker) This guide explain
 Prerequisites Make sure you have the following installed: 
 Backend Requirements 
 • .NET 8 SDK 
+
 • MySQL Server (8.x recommended) 
+
 • MySQL Workbench (optional) 
+
 • Ollama (optional, required for LLM features) Frontend Requirements 
+
 • Node.js 18+ (20 recommended) 
+
 • npm or yarn
 
 Configure MySQL Create a database manually:
@@ -126,21 +155,36 @@ Create a .env.local file in : NextClientApp/ NEXT_PUBLIC_API_URL=http://localhos
 
 🧪 Test the Full‑Stack Flow Products CRUD 
 • Open 
+
 • Create, edit, delete products 
+
 • Data is stored in MySQL ML.NET Predictions 
+
 • Regression 
+
 • Binary classification 
+
 • Multiclass classification LLM (Ollama) 
+
 • Chat 
+
 • Text analysis 
+
 • Q&A Everything should work end‑to‑end.
 
 . 🧹 Troubleshooting Backend cannot connect to MySQL 
 • Ensure MySQL is running 
+
 • Check username/password 
+
 • Ensure port 3306 is open Ollama errors 
+
 • Make sure Ollama is installed 
+
 • Run ollama list to verify models 
+
 • Pull the required model again Frontend cannot reach backend 
+
 • Check NEXT_PUBLIC_API_URL 
+
 • Ensure backend is running on port 5000
