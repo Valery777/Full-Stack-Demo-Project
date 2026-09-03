@@ -35,7 +35,7 @@ Infrastructure & Deployment
 Architecture Diagram
 
 
-┌──────────────────────────┐
+
 
 │ Next.js Frontend │ 
 
@@ -44,7 +44,6 @@ Architecture Diagram
 │(NextClientApp, port 3000)
 
 | (NextJS1, port 5000)  
-└──────────────▲───────────┘ 
 
 ▼ User Browser
 
@@ -56,12 +55,14 @@ Architecture Diagram
 
 │ (phi3:mini, etc.)
 
- └──────────────────┘
+ 
 
 Each project contains its own documentation, while this root README explains the full architecture.
 
 Technology Stack
+
 Frontend 
+
 • Next.js 15 (App Router) 
 
 • React 19 
