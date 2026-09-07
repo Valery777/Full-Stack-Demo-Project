@@ -45,29 +45,7 @@ Infrastructure & Deployment
 • 	Persistent MySQL volumes for all environments.
 • 	Automatic EF Core migrations on backend startup.
 • 	Dev‑only database seeding for sample data.
-
-Architecture Diagram
-
-┌──────────────────────────┐        ┌──────────────────────────┐
-│      Next.js Frontend    │        │     .NET 8 Web API       │
-│(NextClientApp, port 3000)|◄──────►| (NextJS1, port 5000)     │
-│                          │        │                          │
-└──────────────▲───────────┘        └──────────────┬───────────┘
-               │                                   │
-               │                                   │
-               │                                   ▼
-        User Browser                          ┌──────────────────┐
-                                              │     MySQL DB     │
-                                              │ (Persistent Vol) │
-                                              └──────────────────┘
-                                                      │
-                                                      ▼
-                                              ┌──────────────────┐
-                                              │     Ollama LLM   │
-                                              │ (phi3:mini, etc.)│
-                                              └──────────────────┘
-
-
+ 
     Each project contains its own documentation, while this root README explains the full architecture.
 
     Technology Stack
