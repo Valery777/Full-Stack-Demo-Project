@@ -19,18 +19,27 @@ of concerns.
 
 System Overview
 The repository contains two coordinated projects:
+
 • 	NextClientApp — Next.js 15 + React 19 frontend
+
 • 	NextJS1 — .NET 8 Web API backend with MySQL, ML.NET, and Ollama integration
 
 Key Capabilities
 Full‑Stack Features
 • 	Product CRUD UI and API backed by MySQL.
+
 • 	ML.NET prediction tools (regression, binary, multiclass).
+
 • 	LLM chat and text‑analysis powered by Ollama.
+
 • 	JWT authentication with protected endpoints.
+
 • 	Clean Architecture backend with SOLID principles.
+
 • 	React 19 Server Actions, SSR/SSG/ISR examples, and interactive demos.
+
 Infrastructure & Deployment
+
 • 	Multi‑container architecture (frontend, backend, MySQL, Ollama).
 • 	Environment‑specific configuration via , , .
 • 	Persistent MySQL volumes for all environments.
@@ -64,22 +73,37 @@ Architecture Diagram
     Technology Stack
 Frontend
 • 	Next.js 15 (App Router)
+
 • 	React 19
+
 • 	TypeScript
+
 • 	TailwindCSS
+
 • 	Server Actions, SSR, SSG, ISR
+
 Backend
+
 • 	.NET 8 Web API
+
 • 	Clean Architecture (Domain, Application, Infrastructure, API)
+
 • 	EF Core + MySQL
+
 • 	ML.NET models (regression, binary, multiclass)
+
 • 	Ollama LLM integration
+
 • 	Serilog logging
+
 • 	JWT authentication
+
 • 	xUnit tests
 
 Infrastructure
+
 • 	Environment‑specific  files
+
 • 	Persistent MySQL volumes
 
 OpenAI Integration (Optional)
@@ -92,70 +116,113 @@ alongside the existing local LLM (Ollama) support.
 
 Running the Full Stack
 Running the project becomes manual:
+
 • 	.NET 8  must be installed locally.
+
 • 	Node.js must be installed for the frontend.
+
 • 	MySQL must be installed and configured manually.
+
 • 	Ollama must be installed separately if LLM features are used.
+
   Access the applications
+
 • 	Frontend: http://localhost:3000
+
 • 	Backend API + Swagger: http://localhost:5000/swagger
+
 • 	Ollama (local LLM): http://localhost:11434 (if enabled)
 
+
 Environment Strategy
+
 Each environment uses its own:
+
 • 	MySQL database name
+
 • 	MySQL volume
+
 • 	Credentials
+
 • 	Backend/Frontend URLs
 
 
 Project Goals
+
 This repository demonstrates:
+
 - A realistic full‑stack architecture.
+
 - Integration of ML.NET and LLMs into a modern web application.
+
 - Clean, maintainable backend design.
+
 - Modern React 19 and Next.js 15 patterns.
 
  How to Run the Full‑Stack Project Manually (Without Docker)
+
 This guide explains how to run the backend (.NET 8 Web API) and frontend (Next.js 15 + React 19)
+
  manually on your machine without using containerization.
 
+
 1.  Prerequisites
+
 Make sure you have the following installed:
+
 Backend Requirements
+
 • 	.NET 8 SDK
+
 • 	MySQL Server (8.x recommended)
+
 • 	MySQL Workbench (optional)
+
 • 	Ollama (optional, required for LLM features)
+
 Frontend Requirements
+
 • 	Node.js 18+ (20 recommended)
+
 • 	npm or yarn
 
 2.  Configure MySQL
+
 Create a database manually:
+
 1. 	Open MySQL Workbench or terminal.
+
 2. 	Run: CREATE DATABASE nextdb_dev;
+
 Create a MySQL user (if needed):
+
 CREATE USER 'devuser'@'%' IDENTIFIED BY 'devpassword';
 GRANT ALL PRIVILEGES ON nextdb_dev.* TO 'devuser'@'%';
 FLUSH PRIVILEGES;
 
 Update backend connection string
+
 In : NextJS1/appsettings.json
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=localhost;Database=nextdb_dev;User=devuser;Password=devpassword;"
   }
 }
+
 3.  (Optional) Install Ollama for LLM Features
+
 If you want to use the LLM endpoints:
+
 1. 	Install Ollama:
+
 https://ollama.com/download
+
 2. 	Pull the model used in backend:
 
 3. 	Start Ollama (it runs automatically in the background).
 
 4.  Run the Backend (.NET 8 API)
+
 Open a terminal in the backend folder:
 cd NextJS1
 dotnet restore
@@ -175,31 +242,56 @@ Create a .env.local file in : NextClientApp/
 NEXT_PUBLIC_API_URL=http://localhost:5000
 
 6. 🧪 Test the Full‑Stack Flow
+
 Products CRUD
+
 • 	Open 
+
 • 	Create, edit, delete products
+
 • 	Data is stored in MySQL
+
 ML.NET Predictions
+
 • 	Regression
+
 • 	Binary classification
+
 • 	Multiclass classification
+
 LLM (Ollama)
+
 • 	Chat
+
 • 	Text analysis
+
 • 	Q&A
+
 Everything should work end‑to‑end.
 
-. 🧹 Troubleshooting
+
+Troubleshooting
+
 Backend cannot connect to MySQL
+
 • 	Ensure MySQL is running
+
 • 	Check username/password
+
 • 	Ensure port 3306 is open
+
 Ollama errors
+
 • 	Make sure Ollama is installed
+
 • 	Run ollama list to verify models
+
 • 	Pull the required model again
+
 Frontend cannot reach backend
+
 • 	Check NEXT_PUBLIC_API_URL
+
 • 	Ensure backend is running on port 5000
 
 
